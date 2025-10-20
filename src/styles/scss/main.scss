@@ -1,0 +1,578 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import "variables";
+@import "dashboard";
+@import "header";
+@import "footer";
+@import "hero";
+@import "blogs";
+@import "tokenomics";
+@import "partners";
+@import "dropdown";
+@import "security";
+@import "faqs";
+@import "wallet-modal";
+// @import "modals";
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #121212;
+}
+
+/* Token Sale Card Styles */
+.token-sale-card {
+  background: #ffffff0a;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* Animated Border Effect */
+.token-sale-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 20px;
+  padding: 1px;
+  background: linear-gradient(
+    var(--angle),
+    rgba(75, 131, 234, 0) 0%,
+    rgba(75, 131, 234, 0.9) 100%
+  );
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  animation: 3.5s rotate linear infinite;
+  pointer-events: none;
+}
+
+.token-sale-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+/* Progress Bar */
+.progress-section {
+  margin-bottom: 1.5rem;
+}
+
+.progress-bar-container {
+  margin-bottom: 0.5rem;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 24px;
+  background: #ffffff1a;
+  border-radius: 7px;
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(270deg, #4b83ea 0%, #4b83ea 48%, #4b83ea 100%);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.progress-text {
+  position: absolute;
+  top: auto;
+  left: 0;
+  right: 0;
+  bottom: auto;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 400;
+  text-align: center;
+}
+
+/* Price Information */
+.price-info {
+  margin-bottom: 2rem;
+}
+
+.price-item {
+  color: #ffffff;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.highlight-price {
+  color: #4b83ea;
+  font-weight: 600;
+}
+
+/* Input Section */
+.input-section {
+  margin-bottom: 2rem;
+}
+
+.input-group {
+  margin-bottom: 1.5rem;
+  flex-direction: column;
+  label {
+    display: block;
+    color: #ffffff;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+  }
+}
+
+.exchange-rate {
+  color: #9c9c9d;
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  border-top-left-radius: 12px !important;
+  border-bottom-left-radius: 12px !important;
+  padding: 1.25rem 0.75rem;
+  transition: all 0.3s ease;
+  input {
+    flex: 1;
+    background: transparent;
+    -moz-appearance: textfield;
+    border: none;
+    color: #ffffff;
+    font-size: 1rem;
+    outline: none;
+    padding: 0;
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+}
+
+.input-container:focus-within {
+  border-color: rgba(75, 131, 234, 0.5);
+  box-shadow: 0 0 0 2px rgba(75, 131, 234, 0.2);
+}
+
+.input-container input::placeholder {
+  color: #9c9c9d;
+}
+
+.token-display {
+  width: 120px;
+  height: auto;
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.token-logo {
+  width: 24px;
+  height: 24px;
+  background: linear-gradient(135deg, #4b83ea 0%, #4beab5 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+.token-display span {
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Buy Button */
+.buy-button {
+  width: 100%;
+  background: #4b83ea;
+  border: none;
+  border-radius: 12px;
+  padding: 1rem;
+  color: #101010;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .token-sale-card {
+    padding: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .token-sale-title {
+    font-size: 1.5rem;
+  }
+
+  .input-container {
+    // flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .token-display {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .token-sale-card {
+    padding: 1rem;
+  }
+
+  .token-sale-title {
+    font-size: 1.25rem;
+  }
+
+  .price-item {
+    font-size: 0.9rem;
+  }
+}
+
+/* Assets Future Section Styles */
+.assets-future {
+  background: #121212;
+  padding: 6rem 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.assets-hero-content {
+  margin-bottom: 4rem;
+}
+
+.assets-hero-title {
+  font-size: 3.5rem;
+  font-weight: 500;
+  color: #ffffff;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.assets-hero-description {
+  font-size: 1.25rem;
+  color: #f5f5f5;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.assets-hero-button {
+  display: flex;
+  justify-content: center;
+}
+
+.primary-btn {
+  border: 1px solid #f4f0ff83;
+  border-radius: 20px;
+  padding: 14px 16px;
+  font-weight: 400;
+  background: linear-gradient(
+      0deg,
+      rgba(75, 131, 234, 0.01),
+      rgba(75, 131, 234, 0.01)
+    ),
+    linear-gradient(
+      180deg,
+      rgba(243, 238, 255, 0) 0%,
+      rgba(243, 238, 255, 0.04) 100%
+    ),
+    radial-gradient(
+      231.94% 231.94% at 50% 100%,
+      rgba(109, 158, 249, 0.52) 0%,
+      rgba(24, 72, 159, 0) 25.24%
+    );
+  font-size: 16px;
+  color: #f4f0ff;
+  transition: all 0.3s ease;
+  box-shadow: 0px -8px 32px 0px #0e2043cc inset,
+    0px 0px 12px 0px #ffffff14 inset, 0px 53px 15px 0px #01153b03,
+    0px 34px 14px 0px #01153b0f, 0px 19px 11px 0px #01153b33,
+    0px 8px 8px 0px #01153b57, 0px 2px 5px 0px #01153b63;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+    color: #f4f0ff;
+  }
+  @media screen and (max-width: 1024px) {
+    padding: 12px 14px;
+    font-size: 14px;
+  }
+}
+
+/* Content Sections */
+.assets-content-sections {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.content-section {
+  margin-bottom: 3rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 500;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.section-description {
+  font-size: 1.1rem;
+  color: #f5f5f5;
+  line-height: 1.6;
+  font-weight: 300;
+  max-width: 600px;
+  // margin: 0 auto;
+}
+
+.section-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 3rem 0;
+  width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .assets-future {
+    padding: 4rem 0;
+  }
+
+  .assets-hero-title {
+    font-size: 2.5rem;
+  }
+
+  .assets-hero-description {
+    font-size: 1.1rem;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+  }
+
+  .section-description {
+    font-size: 1rem;
+  }
+
+  .primary-btn {
+    padding: 16px 12px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 576px) {
+  .assets-future {
+    padding: 3rem 0;
+  }
+
+  .assets-hero-title {
+    font-size: 2rem;
+  }
+
+  .assets-hero-description {
+    font-size: 1rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .section-description {
+    font-size: 0.95rem;
+  }
+
+  .assets-btn-inside {
+    padding: 14px 10px;
+    font-size: 14px;
+  }
+}
+
+.about-img {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+// Pagination Styles
+.pagination-container {
+  margin-top: 2rem;
+  padding: 1rem 0;
+}
+
+.pagination-wrapper {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  backdrop-filter: blur(10px);
+}
+
+.pagination-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(75, 131, 234, 0.1);
+  border: 1px solid rgba(75, 131, 234, 0.3);
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  color: #4b83ea;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover:not(.disabled) {
+    background: rgba(75, 131, 234, 0.2);
+    border-color: rgba(75, 131, 234, 0.5);
+    transform: translateY(-1px);
+  }
+
+  &.disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.4);
+  }
+
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.pagination-numbers {
+  margin: 0 1rem;
+}
+
+.pagination-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: rgba(75, 131, 234, 0.1);
+    border-color: rgba(75, 131, 234, 0.3);
+    color: #4b83ea;
+    transform: translateY(-1px);
+  }
+
+  &.active {
+    background: linear-gradient(135deg, #4b83ea 0%, #6366f1 100%);
+    border-color: #4b83ea;
+    color: white;
+    box-shadow: 0 4px 12px rgba(75, 131, 234, 0.3);
+  }
+}
+
+.pagination-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  color: rgba(255, 255, 255, 0.4);
+  font-weight: bold;
+}
+
+.pagination-info {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.7);
+  white-space: nowrap;
+}
+
+// Responsive pagination styles
+@media (max-width: 768px) {
+  .pagination-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .pagination-wrapper {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .pagination-btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+  }
+
+  .pagination-number {
+    width: 32px;
+    height: 32px;
+    font-size: 0.8rem;
+  }
+
+  .pagination-info {
+    text-align: center;
+    margin: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .pagination-numbers {
+    margin: 0 0.5rem;
+  }
+
+  .pagination-btn {
+    span {
+      display: none; // Hide text on very small screens, keep only icons
+    }
+  }
+}

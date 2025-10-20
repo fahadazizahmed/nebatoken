@@ -1,0 +1,132 @@
+/* Partners Section Styles */
+.partners-section {
+  background: #121212;
+  padding: 4rem 0;
+}
+
+.partners-content {
+  text-align: center;
+}
+
+.partners-title {
+  font-size: 1rem;
+  font-weight: 300;
+  color: #ffffff;
+  margin-bottom: 2.5rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.partner-card {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  min-width: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-2px);
+  }
+}
+
+.partner-with-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-direction: column;
+}
+
+.partner-logo {
+  width: 100%;
+  height: 25px;
+  object-fit: contain;
+}
+
+.partner-name {
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-align: center;
+  margin: 0;
+}
+
+.partner-name-only {
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .partners-section {
+    padding: 3rem 0;
+  }
+  .partner-logo {
+    width: 60px;
+  }
+
+  .partners-title {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+  }
+
+  .partners-grid {
+    gap: 1rem;
+    flex-direction: column;
+  }
+
+  .partner-card {
+    padding: 1rem 1.5rem;
+    min-width: 200px;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .partner-with-logo {
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .partner-name {
+    font-size: 1rem;
+  }
+
+  .partner-name-only {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .partners-section {
+    padding: 2rem 0;
+  }
+
+  .partners-title {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .partners-grid {
+    gap: 0.75rem;
+  }
+
+  .partner-card {
+    padding: 0.75rem 1rem;
+    min-width: 160px;
+  }
+
+  .partner-name {
+    font-size: 0.9rem;
+  }
+
+  .partner-name-only {
+    font-size: 1rem;
+  }
+}

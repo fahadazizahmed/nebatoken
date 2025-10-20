@@ -1,0 +1,132 @@
+.security-section {
+  // height: 100vh;
+  height: 100%;
+  padding-block: 3rem;
+  position: relative;
+  // background: url("../../../public/images/security-bg.png") no-repeat center
+  //   center;
+  background-size: 100%;
+  
+  .security-video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    opacity: 0.3;
+  }
+  
+  .security-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-block: 3rem;
+    justify-content: center;
+    height: 100%;
+    position: relative;
+    z-index: 2;
+  }
+  .security-img {
+    width: 70px;
+    margin-bottom: 2.5rem;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  .security-title {
+    font-size: 3.5rem;
+    font-weight: 500;
+    background: linear-gradient(
+      180deg,
+      #ffffff 0%,
+      rgba(255, 255, 255, 0.7) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+  }
+  .security-description {
+    font-size: 1.2rem;
+    color: #efedfdb2;
+    line-height: 1.6;
+    font-weight: 300;
+    max-width: 600px;
+  }
+}
+
+.security-tag {
+  margin-bottom: 0.5rem;
+  padding: 8px 16px !important;
+  font-size: 12px !important;
+  font-weight: 400;
+  box-shadow: 0px -8.4px 13.2px 0px #4b83ea30 inset;
+  background: #ffffff01;
+  color: #ffffff;
+  border-radius: 20px;
+  backdrop-filter: blur(7px);
+}
+
+.rim-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 70%;
+  z-index: 1;
+  pointer-events: none;
+  .rim1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    width: 0em;
+    height: 0em;
+    /* Enhanced Glow Effect - Three Color Gradient: Blue → Purple → Blue */
+    box-shadow: 
+      /* Outer glow - Blue tones */ 0 0 30px 20px
+        rgba(109, 158, 249, 0.8),
+      0 0 60px 20px rgba(109, 158, 249, 0.6),
+      /* Middle glow - Purple tones */ 0 0 90px 20px rgba(147, 51, 234, 0.5),
+      0 0 120px 20px rgba(147, 51, 234, 0.3),
+      /* Outer glow - Blue tones again */ 0 0 150px 20px
+        rgba(109, 158, 249, 0.2),
+      0 0 180px 20px rgba(109, 158, 249, 0.1),
+      /* Inner glow - Blue tones */ inset 0 0 20px 20px rgba(109, 158, 249, 0.8),
+      inset 0 0 40px 20px rgba(109, 158, 249, 0.6),
+      /* Inner glow - Purple tones */ inset 0 0 60px 20px
+        rgba(147, 51, 234, 0.4),
+      inset 0 0 80px 20px rgba(147, 51, 234, 0.2),
+      /* Inner glow - Blue tones again */ inset 0 0 100px 20px
+        rgba(109, 158, 249, 0.3),
+      inset 0 0 120px 20px rgba(109, 158, 249, 0.1);
+    border: rgba(109, 158, 249, 0.9) 0.05px solid;
+    backdrop-filter: blur(10px);
+    background: transparent;
+  }
+  .rim1 {
+    animation: expand 3s ease-out infinite;
+  }
+
+  @keyframes expand {
+    0% {
+      width: 2em;
+      height: 2em;
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.7;
+    }
+    100% {
+      width: 80em;
+      height: 80em;
+      opacity: 0;
+    }
+  }
+}

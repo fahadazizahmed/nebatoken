@@ -1,0 +1,307 @@
+$stripe-color: rgba(255, 255, 255, 0.2);
+$stripes: repeating-linear-gradient(
+  100deg,
+  $stripe-color 0%,
+  $stripe-color 1%,
+  transparent 2%,
+  transparent 15%,
+  $stripe-color 16%,
+);
+
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  padding: 2rem 0;
+  @media screen and (max-width: 768px) {
+    padding: 0;
+  }
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.gradient-text {
+  background: linear-gradient(
+    80.72deg,
+    #4b83ea 0%,
+    #4274d1 31.28%,
+    #4beab5 77.97%,
+    #4beaa2 95.64%
+  );
+  background-size: 200% 200%;
+  background-position: 0% 50%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 4s ease-in-out infinite;
+}
+
+.hero-description {
+  font-size: 1.25rem;
+  color: #f5f5f5;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+  max-width: 500px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.hero-btn-connect {
+  border: 1px solid #f4f0ff83;
+  border-radius: 20px;
+  padding: 20px 16px;
+  font-weight: 400;
+  background: linear-gradient(
+      0deg,
+      rgba(75, 131, 234, 0.01),
+      rgba(75, 131, 234, 0.01)
+    ),
+    linear-gradient(
+      180deg,
+      rgba(243, 238, 255, 0) 0%,
+      rgba(243, 238, 255, 0.04) 100%
+    ),
+    radial-gradient(
+      231.94% 231.94% at 50% 100%,
+      rgba(109, 158, 249, 0.52) 0%,
+      rgba(24, 72, 159, 0) 25.24%
+    );
+
+  font-size: 18px;
+  color: #f4f0ff;
+  transition: all 0.3s ease;
+  box-shadow: 0px -8px 32px 0px #0e2043cc inset,
+    0px 0px 12px 0px #ffffff14 inset, 0px 53px 15px 0px #01153b03,
+    0px 34px 14px 0px #01153b0f, 0px 19px 11px 0px #01153b33,
+    0px 8px 8px 0px #01153b57, 0px 2px 5px 0px #01153b63;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+    color: #f4f0ff;
+  }
+}
+
+.hero-btn-learn {
+  background: transparent;
+  padding: 14px 16px;
+  font-weight: 400;
+  font-size: 16px;
+  color: #f4f0ff;
+  transition: all 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-description {
+    font-size: 1.1rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  .hero-btn-connect,
+  .hero-btn-learn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
+}
+
+@keyframes smoothBg {
+  0% {
+    background-position: 0% 50%, 0% 50%;
+  }
+  25% {
+    background-position: 100% 25%, 100% 25%;
+  }
+  50% {
+    background-position: 200% 50%, 200% 50%;
+  }
+  75% {
+    background-position: 300% 75%, 300% 75%;
+  }
+  100% {
+    background-position: 400% 50%, 400% 50%;
+  }
+}
+
+.hero-bg {
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  position: absolute;
+  display: flex;
+  place-content: center;
+  place-items: center;
+  top: 0;
+
+  $rainbow: repeating-linear-gradient(
+    100deg,
+    rgba(75, 131, 234, 0.6) 10%,
+    rgba(75, 131, 234, 0.3) 15%,
+    rgba(75, 131, 234, 0.8) 20%,
+    rgba(75, 234, 181, 0.4) 25%,
+    rgba(75, 131, 234, 0.5) 30%
+  );
+  background-image: $stripes;
+  background-size: 300%, 200%;
+  background-position: 50% 50%, 50% 50%;
+
+  filter: blur(8px);
+
+  mask-image: radial-gradient(ellipse at 100% 0%, #121212 40%, transparent 70%);
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(75, 131, 234, 0.3);
+    mix-blend-mode: multiply;
+    z-index: 1;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: $stripes;
+    background-size: 200%, 100%;
+    animation: smoothBg 60s linear infinite;
+    background-attachment: fixed;
+    mix-blend-mode: difference;
+  }
+}
+
+.hero {
+  position: relative;
+  .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none; /* So users can interact with content above */
+    span {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(75, 131, 234, 0.8) 0%, rgba(75, 234, 181, 0.4) 50%, transparent 100%);
+      box-shadow: 0 0 10px rgba(75, 131, 234, 0.5);
+      animation: move linear infinite;
+    }
+    @for $i from 1 through 60 {
+      $top: random(100);
+      $left: random(100);
+      $duration: random(40) + 30; // 30s–70s
+      $delay: random(70);
+      $origin-x: random(100) - 50; // -50vw to 50vw
+      $origin-y: random(100) - 50; // -50vh to 50vh
+
+      span:nth-child(#{$i}) {
+        top: $top * 1%;
+        left: $left * 1%;
+        animation-duration: $duration * 1s;
+        animation-delay: -$delay * 1s;
+        transform-origin: $origin-x * 1vw $origin-y * 1vh;
+      }
+    }
+  }
+}
+
+@keyframes move {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+    opacity: 0.3;
+  }
+  25% {
+    transform: translate3d(25vw, -25vh, 0) rotate(90deg) scale(1.2);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translate3d(50vw, 0, 0) rotate(180deg) scale(0.8);
+    opacity: 0.5;
+  }
+  75% {
+    transform: translate3d(25vw, 25vh, 0) rotate(270deg) scale(1.1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate3d(0, 0, 0) rotate(360deg) scale(1);
+    opacity: 0.3;
+  }
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes backgroundFloat {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 0.3;
+  }
+  25% {
+    transform: translate(20px, -20px) rotate(90deg);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translate(-10px, -30px) rotate(180deg);
+    opacity: 0.4;
+  }
+  75% {
+    transform: translate(-20px, 10px) rotate(270deg);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate(0, 0) rotate(360deg);
+    opacity: 0.3;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .hero {
+    .container {
+      height: auto !important;
+      margin-bottom: 1rem;
+    }
+  }
+}

@@ -1,0 +1,282 @@
+/* Footer Styles */
+
+.footer {
+  position: relative;
+  z-index: 1;
+}
+.footer-content {
+  background: #f1f1ef;
+  border-radius: 12px;
+}
+
+/* Left Section - Branding */
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo-icon {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #4b83ea 0%, #4beab5 100%);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.logo-brand {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #262626;
+  line-height: 1;
+}
+
+.logo-type {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #98989a;
+  line-height: 1;
+}
+
+.footer-tagline {
+  color: #98989a;
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.footer-copyright {
+  color: #98989a;
+  font-size: 0.8rem;
+  font-weight: 400;
+  margin: 0;
+  opacity: 0.7;
+}
+
+/* Middle Section - Navigation */
+.footer-middle {
+  display: flex;
+  justify-content: center;
+}
+
+.footer-nav-column {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-nav-title {
+  color: #262626;
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+
+.footer-nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-nav-links li a {
+  color: #98989a;
+  font-size: 0.85rem;
+  font-weight: 400;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-nav-links li a:hover {
+  color: #4b83ea;
+}
+
+/* Right Section - Social Media and CTA */
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.twitter-btn {
+  background: #ffffff;
+  border: none;
+  border-radius: 24px;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #262626;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  i {
+    color: #1da1f2;
+    font-size: 1rem;
+  }
+  
+  div {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #000000;
+    
+    span {
+      color: #838383;
+    }
+    
+    @media screen and (max-width: 768px) {
+      font-size: 0.8rem;
+    }
+  }
+}
+
+.allocation-btn {
+  background: #ffffff;
+  border: none;
+  border-radius: 24px;
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #000000;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.allocation-icon {
+  width: 48px;
+  height: 48px;
+  background: #ffffff;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000000;
+  font-weight: 700;
+  font-size: 0.8rem;
+  
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.beta-message {
+  color: #98989a;
+  font-size: 0.75rem;
+  font-weight: 400;
+  margin: 0;
+  line-height: 1.4;
+  max-width: 300px;
+}
+
+/* Responsive Design for Footer */
+@media (max-width: 768px) {
+  .footer {
+    padding: 2rem 0 1.5rem 0;
+  }
+
+  .footer-middle {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer {
+    padding: 1.5rem 0 1rem 0;
+  }
+
+  .footer-logo {
+    justify-content: center;
+  }
+
+  .logo-icon {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+
+  .logo-brand {
+    font-size: 1.25rem;
+  }
+
+  .logo-type {
+    font-size: 0.9rem;
+  }
+
+  .footer-tagline {
+    font-size: 0.85rem;
+    text-align: center;
+  }
+
+  .footer-copyright {
+    font-size: 0.75rem;
+    text-align: center;
+  }
+
+  .footer-nav-title {
+    font-size: 0.85rem;
+  }
+
+  .footer-nav-links li a {
+    font-size: 0.8rem;
+  }
+
+  .twitter-btn {
+    padding: 0.6rem 0.8rem;
+    font-size: 0.8rem;
+  }
+
+  .allocation-btn {
+    padding: 0.8rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .allocation-icon {
+    width: 20px;
+    height: 20px;
+    font-size: 0.7rem;
+  }
+
+  .beta-message {
+    font-size: 0.7rem;
+    max-width: 250px;
+  }
+}

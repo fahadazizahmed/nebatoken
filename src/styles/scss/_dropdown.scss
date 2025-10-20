@@ -1,0 +1,146 @@
+/* Currency Dropdown Styles */
+.dropdown {
+  position: relative;
+}
+
+.currency-selector {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 500;
+  min-width: 100px;
+  i {
+    font-size: 0.9rem;
+    @media screen and (max-width: 768px) {
+        font-size: 0.8rem;
+    }
+  }
+}
+
+.currency-selector.dropdown-toggle::after {
+  display: none;
+}
+
+.currency-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  object-fit: contain;
+  @media screen and (max-width: 768px) {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #1a1a1a;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 0;
+  margin-top: 0.25rem;
+  z-index: 1000;
+  min-width: 120px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.dropdown-menu.show {
+  display: block;
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  text-align: left;
+}
+
+.dropdown-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.dropdown-item.active {
+  background: rgba(75, 131, 234, 0.2);
+  color: #4b83ea;
+}
+
+.dropdown-item img {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  object-fit: contain;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .currency-selector {
+    min-width: 80px;
+    font-size: 0.8rem;
+  }
+
+  .currency-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .dropdown-menu {
+    min-width: 100px;
+  }
+
+  .dropdown-item {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.8rem;
+  }
+
+  .dropdown-item img {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .currency-selector {
+    min-width: 70px;
+    font-size: 0.75rem;
+    padding: 0.4rem;
+  }
+
+  .currency-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .dropdown-menu {
+    min-width: 90px;
+  }
+
+  .dropdown-item {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.75rem;
+  }
+
+  .dropdown-item img {
+    width: 18px;
+    height: 18px;
+  }
+}
