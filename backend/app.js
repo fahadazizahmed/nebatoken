@@ -28,5 +28,5 @@ console.log(' process.env, ', process.env.MOONGOOSE_URL)
 const httpServer = http.createServer(app);
 
 httpServer.listen(PORT, () => {
-  console.log(`Asfr service is listening on port ${PORT}`);
+  console.log(`Neba service is listening on port ${PORT}`);
 });

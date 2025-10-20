@@ -1,21 +1,21 @@
-echo "This will stop and remove asfr-backend--service container, then remove wallet image and create and run new image"
+echo "This will stop and remove neba-backend--service container, then remove wallet image and create and run new image"
 
-echo "Stopping docker for asfr-backend--service...."
-docker stop asfr-backend--service
+echo "Stopping docker for neba-backend--service...."
+docker stop neba-backend--service
 
-echo "Removing docker for asfr-backend--service...."
-docker rm asfr-backend--service
+echo "Removing docker for neba-backend--service...."
+docker rm neba-backend--service
 
-echo "Removing docker image for asfr-backend--service...."
-docker image rm asfr-backend--service-image:latest
+echo "Removing docker image for neba-backend--service...."
+docker image rm neba-backend--service-image:latest
 
-echo "Building docker image for asfr-backend--service...."
-docker build -t asfr-backend--service-image:latest .
+echo "Building docker image for neba-backend--service...."
+docker build -t neba-backend--service-image:latest .
 
-echo "Running docker image for asfr-backend--service...."
+echo "Running docker image for neba-backend--service...."
 docker run -d \
-  --name asfr-backend--service \
+  --name neba-backend--service \
   --restart=always \
   -p 1900:1900 \
   --env-file .env \
-  asfr-backend--service-image:latest
+  neba-backend--service-image:latest

@@ -16,7 +16,7 @@ import '@rainbow-me/rainbowkit/styles.css';
 
 
 const config = getDefaultConfig({
-  appName: 'ASFR Token',
+  appName: 'Neba Token',
   projectId: import.meta.env.VITE_APP_WAGMI_PROJECT_ID,
   chains: [sepolia], // Using Sepolia testnet for testing
   // chains: [base], // Uncomment this and comment sepolia above when going live on Base
